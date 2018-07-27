@@ -1,7 +1,7 @@
 <h1><%= @artist.name %></h1>
 
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
 <% end %>
 
 <ul>
