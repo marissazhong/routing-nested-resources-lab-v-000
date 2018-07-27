@@ -4,8 +4,8 @@ class SongsController < ApplicationController
   use Rack::Flash
   def index
     if params[:artist_id]
-      artist = Artist.find_by(id: params[:artist_id])
-      if artist
+      @artist = Artist.find_by(id: params[:artist_id])
+      if @artist
         @songs = artist.songs
       else
         flash[:message] = "Artist not found."
