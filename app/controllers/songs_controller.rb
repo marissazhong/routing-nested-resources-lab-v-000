@@ -8,8 +8,7 @@ class SongsController < ApplicationController
       if @artist != nil
         @songs = artist.songs
       else
-        flash[:message] = "Artist not found."
-        redirect_to artists_path
+        redirect_to artists_path, alert: "Artist not found."
       end
     else
       @songs = Song.all
@@ -19,8 +18,7 @@ class SongsController < ApplicationController
   def show
     @song = Song.find_by(id: params[:id])
     if @song = nil
-      flash[:message] = "Song not found."
-      redirect_to artist_songs_path
+      redirect_to artist_songs_path, alert: "Song not found."
     end
   end
 
