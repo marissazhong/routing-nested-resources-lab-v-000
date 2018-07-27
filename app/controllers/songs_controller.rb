@@ -20,7 +20,7 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     if @song = nil
       redirect_to artist_songs_path
-
+    end
   end
 
   def new
